@@ -1,0 +1,185 @@
+/* Anna Fiore — personal website */
+
+:root {
+  --bg: #fbfaf7;
+  --text: #1f2328;
+  --muted: #5c636b;
+  --rule: #e3e0d8;
+  --accent: #2f5d62;
+  --accent-hover: #1e4044;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover { color: var(--accent-hover); border-bottom-color: currentColor; }
+
+.wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header and navigation */
+
+header.site {
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0 20px;
+}
+
+header.site .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+.site-name:hover { color: var(--text); border-bottom-color: transparent; }
+
+nav a {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-left: 22px;
+}
+nav a:first-child { margin-left: 0; }
+nav a:hover { color: var(--accent); border-bottom-color: transparent; }
+nav a[aria-current="page"] { color: var(--text); border-bottom: 1px solid var(--text); }
+
+main { padding: 48px 0 64px; }
+
+/* Home */
+
+.intro {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.intro img {
+  width: 220px;
+  height: 220px;
+  border-radius: 2px;
+  object-fit: cover;
+  display: block;
+}
+
+.intro h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.role {
+  font-family: var(--sans);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.contact {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bio { margin-top: 40px; }
+.bio p { margin: 0 0 1.1em; }
+
+/* Research */
+
+h1.page-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0 0 32px;
+}
+
+h2 {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+  margin: 44px 0 20px;
+}
+h2:first-of-type { margin-top: 0; }
+
+.pub { margin: 0 0 24px; }
+
+.pub .title { font-weight: 600; }
+
+.pub .meta { color: var(--muted); }
+
+.pub .links {
+  font-family: var(--sans);
+  font-size: 14px;
+  margin-top: 2px;
+}
+.pub .links a { margin-right: 16px; }
+
+/* CV & Bio */
+
+.cv-link {
+  font-family: var(--sans);
+  font-size: 15px;
+  display: inline-block;
+  border: 1px solid var(--accent);
+  padding: 8px 18px;
+  margin-bottom: 36px;
+}
+.cv-link:hover { background: var(--accent); color: #fff; border-bottom-color: var(--accent); }
+
+/* Footer */
+
+footer.site {
+  border-top: 1px solid var(--rule);
+  padding: 20px 0 32px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Small screens */
+
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  header.site .wrap { flex-direction: column; align-items: flex-start; }
+  nav a { margin-left: 0; margin-right: 18px; }
+  main { padding-top: 32px; }
+  .intro { grid-template-columns: 1fr; gap: 24px; }
+  .intro img { width: 160px; height: 160px; }
+  .intro h1 { font-size: 30px; }
+}
